@@ -7,7 +7,7 @@ This project is a REST API solution for the Chitkara University Qualifier (Class
 
 ### Live Endpoints
 - **Health Check (GET)**: [https://bajaj-finserv-backend-assignment.vercel.app////api/health](https://bajaj-finserv-backend-assignment.vercel.app/api/health)
-- **BFHL (POST)**: `https://bajaj-finserv-backend-assignment.vercel.app/api/bfhl`
+- **BFHL (POST)**: [https://bajaj-finserv-backend-assignment.vercel.app////api/health](https://bajaj-finserv-backend-assignment.vercel.app/api/health)
 
 ## 🛠 Tech Stack
 - **Framework**: Next.js 15 (App Router)
