@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bajaj Finserv Backend Assignment
 
-## Getting Started
+This project is a REST API solution for the Chitkara University Qualifier (Class of 2027), developed using **Next.js** and **TypeScript**. It implements strict API specifications for mathematical operations and AI integration.
 
-First, run the development server:
+## 🚀 Deployed API
+**Base URL:** `https://bajaj-finserv-backend-assignment.vercel.app`
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Live Endpoints
+- **Health Check (GET)**: [https://bajaj-finserv-backend-assignment.vercel.app/api/health](https://bajaj-finserv-backend-assignment.vercel.app/api/health)
+- **BFHL (POST)**: `https://bajaj-finserv-backend-assignment.vercel.app/api/bfhl`
+
+## 🛠 Tech Stack
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Validation**: Zod
+- **AI Integration**: Google Gemini (`@google/generative-ai`)
+- **Deployment**: Vercel
+
+## 📋 API Documentation
+
+### 1. Health Check
+**Endpoint:** `GET /api/health`
+
+**Response:**
+```json
+{
+  "is_success": true,
+  "official_email": "YOUR_CHITKARA_EMAIL"
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Functional Endpoint
+**Endpoint:** `POST /api/bfhl`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Headers:**
+`Content-Type: application/json`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Supported Keys:**
+- `fibonacci`: Returns first `n` Fibonacci numbers.
+- `prime`: Returns prime numbers from an array.
+- `lcm`: Calculates LCM of an array.
+- `hcf`: Calculates HCF of an array.
+- `AI`: Returns a single-word answer to a question.
 
-## Learn More
+#### Examples
 
-To learn more about Next.js, take a look at the following resources:
+**Fibonacci:**
+Request: `{ "fibonacci": 7 }`
+Response: `{ "is_success": true, "email": "...", "data": [0,1,1,2,3,5,8] }`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Prime Numbers:**
+Request: `{ "prime": [2, 4, 7, 9, 11] }`
+Response: `{ "is_success": true, "email": "...", "data": [2, 7, 11] }`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**LCM:**
+Request: `{ "lcm": [12, 18, 24] }`
+Response: `{ "is_success": true, "email": "...", "data": 72 }`
 
-## Deploy on Vercel
+**HCF:**
+Request: `{ "hcf": [24, 36, 60] }`
+Response: `{ "is_success": true, "email": "...", "data": 12 }`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**AI Question:**
+Request: `{ "AI": "What is the capital of India?" }`
+Response: `{ "is_success": true, "email": "...", "data": "New Delhi" }`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## ⚙️ Setup & Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd <project-folder>
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Configure Environment Variables:**
+   Create a `.env.local` file:
+   ```env
+   OFFICIAL_EMAIL=your_email@chitkara.edu.in
+   GEMINI_API_KEY=your_gemini_api_key
+   ```
+
+4. **Run Locally:**
+   ```bash
+   npm run dev
+   ```
+
+## 🧪 Testing
+You can test the API using `curl` or Postman.
+
+```bash
+# Test Health
+curl -X GET https://bajaj-finserv-backend-assignment.vercel.app/api/health
+
+# Test Fibonacci
+curl -X POST https://bajaj-finserv-backend-assignment.vercel.app/api/bfhl \
+  -H "Content-Type: application/json" \
+  -d '{"fibonacci": 10}'
+```
+
+## 🔒 Security & Validation
+- **Input Validation**: Uses `zod` to strictly enforce request structure.
+- **Error Handling**: Graceful error messages with appropriate HTTP status codes (200, 400, 500).
+- **Edge Cases**: Handles empty arrays, negative numbers, and invalid types securely.
