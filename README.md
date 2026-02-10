@@ -3,10 +3,10 @@
 This project is a REST API solution for the Chitkara University Qualifier (Class of 2027), developed using **Next.js** and **TypeScript**. It implements strict API specifications for mathematical operations and AI integration.
 
 ## 🚀 Deployed API
-**Base URL:** `https://bajaj-finserv-backend-assignment.vercel.app`
+**Base URL:** `https://bajaj-finserv-backend-assignment.vercel.app/`
 
 ### Live Endpoints
-- **Health Check (GET)**: [https://bajaj-finserv-backend-assignment.vercel.app/api/health](https://bajaj-finserv-backend-assignment.vercel.app/api/health)
+- **Health Check (GET)**: [https://bajaj-finserv-backend-assignment.vercel.app////api/health](https://bajaj-finserv-backend-assignment.vercel.app/api/health)
 - **BFHL (POST)**: `https://bajaj-finserv-backend-assignment.vercel.app/api/bfhl`
 
 ## 🛠 Tech Stack
